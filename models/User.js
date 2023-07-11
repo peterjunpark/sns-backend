@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const { hashPassword, isEmail } = require("../utils/helpers");
 
 const userSchema = new Schema(
   {
@@ -13,16 +14,14 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       validate: {
-        validator: function (email) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
-        },
+        validator: isEmail,
         message: "Invalid email address",
       },
     },
     password: {
       type: String,
       required: true,
+      set: hashPassword,
     },
     friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
     thoughts: [{ type: Schema.Types.ObjectId, ref: "Thought" }],
@@ -30,7 +29,6 @@ const userSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      getters: true,
       setters: true,
     },
   }
