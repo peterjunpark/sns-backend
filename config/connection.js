@@ -1,5 +1,19 @@
-const { connect, connection } = require("mongoose");
+const mongoose = require("mongoose");
 
-connect("mongodb://127.0.0.1:27017/socialNetworkDB");
+const connectToDB = async () => {
+  try {
+    await mongoose.connect("mongodb://127.0.0.1:27017/snsDB", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
+  }
+};
 
-module.exports = connection;
+connectToDB();
+
+const db = mongoose.connection;
+
+module.exports = db;
