@@ -21,7 +21,6 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      set: hashPassword,
     },
     friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
     thoughts: [{ type: Schema.Types.ObjectId, ref: "Thought" }],
@@ -29,8 +28,8 @@ const userSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      setters: true,
     },
+    id: false,
   }
 );
 

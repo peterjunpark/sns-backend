@@ -1,11 +1,11 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const { formatTimestamp } = require("../utils/helpers");
 
 const reactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
-      default: new Schema.Types.ObjectId(),
+      default: new Types.ObjectId(),
     },
     reactionBody: {
       type: String,
