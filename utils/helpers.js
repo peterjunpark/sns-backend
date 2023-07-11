@@ -6,8 +6,15 @@ module.exports = {
   formatTimestamp: (timestamp) => {
     return dayjs(timestamp).format("DD/MM/YYYY");
   },
-  hashPassword: (plainPassword) => {
-    return bcrypt.hash(plainPassword, saltRounds);
+  hashPassword: async (plainPassword) => {
+    try {
+      const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+      console.log(hashedPassword);
+      return hashedPassword;
+    } catch (err) {
+      console.error("Error hashing password.");
+      throw err;
+    }
   },
   isEmail: (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
