@@ -17,9 +17,7 @@ module.exports = {
         res.json(user);
       } else {
         // Get all users
-        const users = await User.find()
-          .populate("thoughts")
-          .populate("friends");
+        const users = await User.find();
         res.json(users);
       }
     } catch (error) {
