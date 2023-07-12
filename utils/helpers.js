@@ -13,7 +13,6 @@ module.exports = {
       return hashedPassword;
     } catch (err) {
       console.error("Error hashing password.");
-      throw err;
     }
   },
   isEmail: (email) => {
