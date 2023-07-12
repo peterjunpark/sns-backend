@@ -14,7 +14,7 @@ module.exports = {
         res.json(thought);
       } else {
         // Get all thoughts
-        const thoughts = await Thought.find().populate("reactions");
+        const thoughts = await Thought.find();
         res.json(thoughts);
       }
     } catch (error) {
