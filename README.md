@@ -28,7 +28,7 @@ To improve my NoSQL skills and practice the following concepts:
 - Working with model schemas, instances, instance methods, and cursor methods.
 
 ## Installation and usage
-See a video walkthrough here:
+See a video walkthrough here: [https://youtu.be/dxKHK5tgbso](https://youtu.be/dxKHK5tgbso)
 
 ## Core technologies
 - Express.js
