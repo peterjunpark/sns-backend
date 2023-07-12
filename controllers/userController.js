@@ -72,7 +72,7 @@ module.exports = {
       }
       // Delete user's thoughts
       await Thought.deleteMany({ username: deletedUser.username });
-      res.json({ message: "User deleted successfully." });
+      res.json({ message: "User and user's thoughts deleted successfully." });
     } catch (error) {
       console.error("Error deleting user:", error);
       res.status(500).json({ error: "Failed to delete user." });
