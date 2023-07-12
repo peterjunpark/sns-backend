@@ -24,8 +24,8 @@ A basic back-end for a (as yet) non-existent social networking service. It allow
 To improve my NoSQL skills and practice the following concepts:
 - Modelling data and relationships for a document-driven NoSQL database.
 - Developing API endpoints and routes using Express and Mongoose to perform CRUD operations on a MongoDB database.
-- Working with RESTful practices and testing API routes using an HTTP client.
-- Model schemas, instances, instance methods, and cursor methods.
+- Implementing RESTful best practices and testing API routes using an HTTP client.
+- Working with model schemas, instances, instance methods, and cursor methods.
 
 ## Installation and usage
 See a video walkthrough here:
